@@ -2,7 +2,7 @@
 
 %global pkgname yaml-cpp
 
-Name:           yaml-cpp
+Name:           mingw-%{pkgname}
 Version:        0.6.1
 Release:        3%{?dist}
 Summary:        A YAML parser and emitter for C++
