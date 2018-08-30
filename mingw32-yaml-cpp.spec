@@ -14,8 +14,6 @@ Source0:        https://github.com/jbeder/yaml-cpp/archive/%{name}-%{version}.ta
 BuildArch:      noarch
 
 BuildRequires:  cmake
-BuildRequires:  perl
-BuildRequires:  libzip-tools
 
 BuildRequires:  mingw32-boost
 BuildRequires:  mingw32-filesystem >= 95
