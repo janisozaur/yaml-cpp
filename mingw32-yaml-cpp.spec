@@ -67,39 +67,104 @@ The API is documented by man pages.
 
 
 %build
-%mingw_cmake -DYAML_CPP_BUILD_TESTS=OFF
+%mingw_cmake -DYAML_CPP_BUILD_TESTS=OFF -DYAML_CPP_BUILD_TOOLS=OFF
 %mingw_make %{?_smp_mflags}
 
 
 %install
 %mingw_make install DESTDIR=%{buildroot}
 
-# Remove files we don't need
-rm -r %{buildroot}%{mingw32_datadir}/*
-rm -r %{buildroot}%{mingw64_datadir}/*
-
 
 %files -n mingw32-%{pkgname}
 %license LICENSE
-%{mingw32_bindir}/zipcmp.exe
-%{mingw32_bindir}/zipmerge.exe
-%{mingw32_bindir}/ziptool.exe
-%{mingw32_bindir}/libzip-5.dll
-%{mingw32_libdir}/libzip.dll.a
-%{mingw32_libdir}/pkgconfig/libzip.pc
-%{mingw32_includedir}/zip.h
-%{mingw32_includedir}/zipconf.h
+%{mingw32_bindir}/yaml-cpp.dll
+%{mingw32_libdir}/yaml-cpp.dll.a
+%{mingw32_includedir}/yaml-cpp/traits.h
+%{mingw32_includedir}/yaml-cpp/mark.h
+%{mingw32_includedir}/yaml-cpp/emitterdef.h
+%{mingw32_includedir}/yaml-cpp/ostream_wrapper.h
+%{mingw32_includedir}/yaml-cpp/node
+%{mingw32_includedir}/yaml-cpp/node/parse.h
+%{mingw32_includedir}/yaml-cpp/node/convert.h
+%{mingw32_includedir}/yaml-cpp/node/iterator.h
+%{mingw32_includedir}/yaml-cpp/node/ptr.h
+%{mingw32_includedir}/yaml-cpp/node/emit.h
+%{mingw32_includedir}/yaml-cpp/node/impl.h
+%{mingw32_includedir}/yaml-cpp/node/detail
+%{mingw32_includedir}/yaml-cpp/node/detail/iterator_fwd.h
+%{mingw32_includedir}/yaml-cpp/node/detail/bool_type.h
+%{mingw32_includedir}/yaml-cpp/node/detail/memory.h
+%{mingw32_includedir}/yaml-cpp/node/detail/node_iterator.h
+%{mingw32_includedir}/yaml-cpp/node/detail/iterator.h
+%{mingw32_includedir}/yaml-cpp/node/detail/impl.h
+%{mingw32_includedir}/yaml-cpp/node/detail/node.h
+%{mingw32_includedir}/yaml-cpp/node/detail/node_data.h
+%{mingw32_includedir}/yaml-cpp/node/detail/node_ref.h
+%{mingw32_includedir}/yaml-cpp/node/node.h
+%{mingw32_includedir}/yaml-cpp/node/type.h
+%{mingw32_includedir}/yaml-cpp/emitter.h
+%{mingw32_includedir}/yaml-cpp/emitterstyle.h
+%{mingw32_includedir}/yaml-cpp/eventhandler.h
+%{mingw32_includedir}/yaml-cpp/contrib
+%{mingw32_includedir}/yaml-cpp/contrib/graphbuilder.h
+%{mingw32_includedir}/yaml-cpp/contrib/anchordict.h
+%{mingw32_includedir}/yaml-cpp/noncopyable.h
+%{mingw32_includedir}/yaml-cpp/yaml.h
+%{mingw32_includedir}/yaml-cpp/exceptions.h
+%{mingw32_includedir}/yaml-cpp/dll.h
+%{mingw32_includedir}/yaml-cpp/emittermanip.h
+%{mingw32_includedir}/yaml-cpp/binary.h
+%{mingw32_includedir}/yaml-cpp/emitfromevents.h
+%{mingw32_includedir}/yaml-cpp/parser.h
+%{mingw32_includedir}/yaml-cpp/stlemitter.h
+%{mingw32_includedir}/yaml-cpp/null.h
+%{mingw32_includedir}/yaml-cpp/anchor.h
+# TODO: add cmake files
 
 %files -n mingw64-%{pkgname}
 %license LICENSE
-%{mingw64_bindir}/zipcmp.exe
-%{mingw64_bindir}/zipmerge.exe
-%{mingw64_bindir}/ziptool.exe
-%{mingw64_bindir}/libzip-5.dll
-%{mingw64_libdir}/libzip.dll.a
-%{mingw64_libdir}/pkgconfig/libzip.pc
-%{mingw64_includedir}/zip.h
-%{mingw64_includedir}/zipconf.h
+%{mingw64_bindir}/yaml-cpp.dll
+%{mingw64_libdir}/yaml-cpp.dll.a
+%{mingw64_includedir}/yaml-cpp/traits.h
+%{mingw64_includedir}/yaml-cpp/mark.h
+%{mingw64_includedir}/yaml-cpp/emitterdef.h
+%{mingw64_includedir}/yaml-cpp/ostream_wrapper.h
+%{mingw64_includedir}/yaml-cpp/node
+%{mingw64_includedir}/yaml-cpp/node/parse.h
+%{mingw64_includedir}/yaml-cpp/node/convert.h
+%{mingw64_includedir}/yaml-cpp/node/iterator.h
+%{mingw64_includedir}/yaml-cpp/node/ptr.h
+%{mingw64_includedir}/yaml-cpp/node/emit.h
+%{mingw64_includedir}/yaml-cpp/node/impl.h
+%{mingw64_includedir}/yaml-cpp/node/detail
+%{mingw64_includedir}/yaml-cpp/node/detail/iterator_fwd.h
+%{mingw64_includedir}/yaml-cpp/node/detail/bool_type.h
+%{mingw64_includedir}/yaml-cpp/node/detail/memory.h
+%{mingw64_includedir}/yaml-cpp/node/detail/node_iterator.h
+%{mingw64_includedir}/yaml-cpp/node/detail/iterator.h
+%{mingw64_includedir}/yaml-cpp/node/detail/impl.h
+%{mingw64_includedir}/yaml-cpp/node/detail/node.h
+%{mingw64_includedir}/yaml-cpp/node/detail/node_data.h
+%{mingw64_includedir}/yaml-cpp/node/detail/node_ref.h
+%{mingw64_includedir}/yaml-cpp/node/node.h
+%{mingw64_includedir}/yaml-cpp/node/type.h
+%{mingw64_includedir}/yaml-cpp/emitter.h
+%{mingw64_includedir}/yaml-cpp/emitterstyle.h
+%{mingw64_includedir}/yaml-cpp/eventhandler.h
+%{mingw64_includedir}/yaml-cpp/contrib
+%{mingw64_includedir}/yaml-cpp/contrib/graphbuilder.h
+%{mingw64_includedir}/yaml-cpp/contrib/anchordict.h
+%{mingw64_includedir}/yaml-cpp/noncopyable.h
+%{mingw64_includedir}/yaml-cpp/yaml.h
+%{mingw64_includedir}/yaml-cpp/exceptions.h
+%{mingw64_includedir}/yaml-cpp/dll.h
+%{mingw64_includedir}/yaml-cpp/emittermanip.h
+%{mingw64_includedir}/yaml-cpp/binary.h
+%{mingw64_includedir}/yaml-cpp/emitfromevents.h
+%{mingw64_includedir}/yaml-cpp/parser.h
+%{mingw64_includedir}/yaml-cpp/stlemitter.h
+%{mingw64_includedir}/yaml-cpp/null.h
+%{mingw64_includedir}/yaml-cpp/anchor.h
 
 
 %changelog
