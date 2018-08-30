@@ -69,7 +69,7 @@ The API is documented by man pages.
 
 
 %build
-%mingw_cmake
+%mingw_cmake -DYAML_CPP_BUILD_TESTS=OFF
 %mingw_make %{?_smp_mflags}
 
 
