@@ -119,7 +119,10 @@ The API is documented by man pages.
 %{mingw32_includedir}/yaml-cpp/stlemitter.h
 %{mingw32_includedir}/yaml-cpp/null.h
 %{mingw32_includedir}/yaml-cpp/anchor.h
-# TODO: add cmake files
+%{mingw32_prefix}/CMake/yaml-cpp-config-version.cmake
+%{mingw32_prefix}/CMake/yaml-cpp-config.cmake
+%{mingw32_prefix}/CMake/yaml-cpp-targets-release.cmake
+%{mingw32_prefix}/CMake/yaml-cpp-targets.cmake
 
 %files -n mingw64-%{pkgname}
 %license LICENSE
@@ -165,7 +168,12 @@ The API is documented by man pages.
 %{mingw64_includedir}/yaml-cpp/stlemitter.h
 %{mingw64_includedir}/yaml-cpp/null.h
 %{mingw64_includedir}/yaml-cpp/anchor.h
+%{mingw64_prefix}/CMake/yaml-cpp-config-version.cmake
+%{mingw64_prefix}/CMake/yaml-cpp-config.cmake
+%{mingw64_prefix}/CMake/yaml-cpp-targets-release.cmake
+%{mingw64_prefix}/CMake/yaml-cpp-targets.cmake
 
+# See https://fedoraproject.org/wiki/Packaging:MinGW
 
 %changelog
 * Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9-4
